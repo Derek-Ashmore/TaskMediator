@@ -38,7 +38,8 @@ String callResult = taskMediator.invoke(callable);
 
 ### Example with custom error handler
 ```  
-TaskMediator<String> taskMediator = new TaskMediator<String>(DEFAULT_RESPONSE, new MyTaskErrorHandler());  
+TaskMediator<String> taskMediator = new TaskMediator<String>(DEFAULT_RESPONSE, 
+	new MyTaskErrorHandler());  
 MyCallable callable = new MyCallable();  
 
 String callResult = taskMediator.invoke(callable);
