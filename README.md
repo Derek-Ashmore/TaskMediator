@@ -1,5 +1,5 @@
 # TaskMediator
-*** Under Construction ***.  TaskMediator facilitates providing partial functionality in the event of an outage by handling exceptions and providing a default response.  The objective is to make it easy for developers to provide 'partial' functionality should a resource not be available.  Often, providing partial functionality leaves a better impression on users than a complete outage.
+TaskMediator facilitates providing partial functionality in the event of an outage by handling exceptions and providing a default response.  The objective is to make it easy for developers to provide 'partial' functionality should a resource not be available.  Often, providing partial functionality leaves a better impression on users than a complete outage.
 
 That said, developers need that outage to be logged and alerts generated so that full functionality can be restored.  TaskMediator seeks to do just that.
 
@@ -25,5 +25,23 @@ To use TaskMediator, follow these instructions:
 * Use TaskMediator to execute your Callable and return a response.
 
 By default, TaskMediator will log any exceptions in your callable at the ERROR level via Slf4J.  You can provide a TaskErrorHandler with custom reactions to exceptions if needed.
+
+## Usage examples:
+
+### A most basic example with the Slf4j exception logging default
+```  
+TaskMediator<String> taskMediator = new TaskMediator<String>(DEFAULT_RESPONSE);  
+MyCallable callable = new MyCallable();  
+
+String callResult = taskMediator.invoke(callable);
+```  
+
+### Example with custom error handler
+```  
+TaskMediator<String> taskMediator = new TaskMediator<String>(DEFAULT_RESPONSE, new MyTaskErrorHandler());  
+MyCallable callable = new MyCallable();  
+
+String callResult = taskMediator.invoke(callable);
+```  
 
  
