@@ -6,17 +6,19 @@ That said, developers need that outage to be logged and alerts generated so that
 ## System Requirements
 * Java JDK 6.0 or above (it was compiled under JDK 7 using 1.6 as the target source).
 * Apache Commons Lang version 3.0 or above
+* Slf4J API (any version or concrete implementation)
 
 ## Installation Instructions  
 TaskMediator is easy to install whether you use maven or not.
 
 ### Maven Users  
-Maven users can find dependency information [here](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22TaskMediator%22). [forthcoming]
+Maven users can find dependency information [here](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22TaskMediator%22).
 
 ### Non-Maven Users  
 Include the following jars in your class path:  
-* Download the CircuitBreaker jar from [Github](https://github.com/Derek-Ashmore/TaskMediator/releases) and put it in your class path.  
+* Download the TaskMediator jar from [Github](https://github.com/Derek-Ashmore/TaskMediator/releases) and put it in your class path.  
 * Insure Apache Commons Lang version 3.0 or above is in your class path.  
+* Insure Slf4j API is in your class path
 
 ## Usage Instructions  
 To use TaskMediator, follow these instructions:  
